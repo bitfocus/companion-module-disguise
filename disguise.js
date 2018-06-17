@@ -13,6 +13,12 @@ function instance(system, id, config) {
 	return self;
 }
 
+instance.prototype.configUpdate = function(config) {
+	var self = this;
+
+	self.config = config;
+};
+
 instance.prototype.init = function() {
 	var self = this;
 	self.status(0);
