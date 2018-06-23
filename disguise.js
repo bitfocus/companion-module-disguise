@@ -31,6 +31,13 @@ instance.prototype.config_fields = function () {
 	var self = this;
 	return [
 		{
+			type: 'text',
+			id: 'info',
+			width: 12,
+			label: 'Information',
+			value: 'This module sends default OSC controls to the d3/disguise server. Remember to set up the server to receive OSC.'
+		},
+		{
 			type: 'textinput',
 			id: 'host',
 			label: 'Target IP',
