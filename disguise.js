@@ -49,6 +49,7 @@ instance.prototype.config_fields = function () {
 			id: 'port',
 			label: 'OSC Port',
 			width: 6,
+			default: '51000',
 			regex: self.REGEX_PORT
 		}
 
@@ -75,14 +76,26 @@ instance.prototype.actions = function(system) {
 		'previous_track': { label: 'Previous track' },
 		'next_track': { label: 'Next track' },
 		'fade_up': { label: 'Master brightness - Fade up' },
-		'fade_down': { label: 'Master brightness - Fade down' }
+		'fade_down': { label: 'Master brightness - Fade down' },
+		'cue': {
+			label: 'Trigger cue',
+			options: [{
+				type: 'textinput',
+				label: 'Cue number',
+				id: 'cue',
+				default: '0',
+				regex: self.REGEX_NUMBER
+			}]
+		}
 	});
 
 }
 
 instance.prototype.action = function(action) {
 	var self = this;
+	var args = [];
 	var id = action.action;
+	var port = (parseInt(self.config.port) > 1024 ? parseInt(self.config.port) : 51000);
 
 	debug('run action:', id);
 
@@ -96,12 +109,16 @@ instance.prototype.action = function(action) {
 		'previous_track': '/d3/showcontrol/previoustrack',
 		'next_track': '/d3/showcontrol/nexttrack',
 		'fade_up': '/d3/showcontrol/fadeup',
-		'fade_down': '/d3/showcontrol/fadedown'
+		'fade_down': '/d3/showcontrol/fadedown',
+		'cue': '/d3/showcontrol/cue'
 	};
 
+	if (id == 'cue') {
+		args.push({ type: 'f', value: action.options.cue });
+	}
+
 	if (osc[id] !== undefined) {
-		debug('sending',osc[id],"to",self.config.host);
-		self.system.emit('osc_send', self.config.host, (parseInt(self.config.port) > 1024 ? parseInt(self.config.port) : 51000), osc[id], [])
+		self.system.emit('osc_send', self.config.host, port, osc[id], args);
 	}
 
 };
