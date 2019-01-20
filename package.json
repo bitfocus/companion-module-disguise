@@ -1,17 +1,19 @@
 {
-  "name": "disguise",
-  "version": "1.0.0",
+	"name": "disguise",
+	"version": "1.0.1",
 	"api_version": "1.0.0",
-	"keywords": [ "Media Server" ],
-	"manufacturer": "disguise",
-	"product": "OSC Control",
-	"shortname": "d3mtc",
+	"keywords": [
+		"Media Server"
+	],
+	"manufacturer": "Disguise",
+	"product": "Disguise - OSC",
+	"shortname": "d3osc",
 	"homepage": "https://www.disguise.one/en/",
-  "description": "Disguise OSC Control",
-  "main": "disguise.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "William Viker <william@bitfocus.io>",
-  "license": "MIT"
+	"description": "Disguise OSC Control",
+	"main": "disguise.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "William Viker <william@bitfocus.io>",
+	"license": "MIT"
 }
