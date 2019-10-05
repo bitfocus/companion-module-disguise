@@ -71,6 +71,7 @@ instance.prototype.actions = function(system) {
 		'play_to_end': { label: 'Play to end of section' },
 		'loop_section': { label: 'Loop section' },
 		'stop': { label: 'Stop' },
+
 		'return_to_start': {
 			label: 'Return to start'
 		},
@@ -139,7 +140,7 @@ instance.prototype.actions = function(system) {
 			}]
 		},
 
-
+		'hold': { label: 'Hold' }
 	});
 
 }
@@ -174,7 +175,9 @@ instance.prototype.action = function(action) {
 
 		'cue': '/d3/showcontrol/cue',
 		'return_to_start': '/d3/showcontrol/returntostart',
-		'volume': '/d3/showcontrol/volume'
+		'volume': '/d3/showcontrol/volume',
+
+		'hold': '/d3/showcontrol/hold'
 
 	};
 
@@ -199,7 +202,7 @@ instance.prototype.action = function(action) {
 	}
 
 	if (osc[id] !== undefined) {
-		console.log("send osc", osc[id],args)
+		log("send osc", osc[id],args)
 		self.system.emit('osc_send', self.config.host, port, osc[id], args);
 	}
 
