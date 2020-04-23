@@ -49,7 +49,7 @@ instance.prototype.config_fields = function () {
 			id: 'port',
 			label: 'OSC Port',
 			width: 6,
-			default: '51000',
+			default: '7401',
 			regex: self.REGEX_PORT
 		}
 
