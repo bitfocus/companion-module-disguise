@@ -1,15 +1,36 @@
 ## d3/disguise (OSC)
-This module sends default OSC controls to the d3/disguise server. Remember to set up the server to receive OSC.
+This module provides default OSC controls to the d3/disguise server. Setup OSC transport within d3/disguise.
 
 **Available commands for d3/disguise**
 
+**Input Messages**
 * Play
-* Play to end of selection
-* Loop selection
+* Play to end of section
+* Loop section
 * Stop
 * Previous Section
 * Next Section
+* Return to start
 * Previous track
 * Next track
-* Master brightnes - Fade up
-* Master brightnes - Fade down
+* Track name
+* Track ID
+* Cue
+* Fade up
+* Fade down
+* Hold
+* Volume
+* Brightness
+
+**Output Messages**
+* Heartbeat
+* Track position
+* Track name
+* Track ID
+* Current section name
+* Next section name
+* Section hint
+* Volume
+* Brightness
+* BPM
+* Play mode
