@@ -85,12 +85,12 @@ instance.prototype.actions = function(system) {
 
 	self.system.emit('instance_actions', self.id, {
 		'play': { label: 'Play' },
-		'play_section': { label: 'Play to end of section' },
+		'play_to_end': { label: 'Play to end of section' },
 		'loop_section': { label: 'Loop section' },
 		'stop': { label: 'Stop' },
 		'previous_section': { label: 'Previous section' },
 		'next_section': { label: 'Next section' },
-		'return_start': { label: 'Return to start' },
+		'return_to_start': { label: 'Return to start' },
 		'previous_track': { label: 'Previous track' },
 		'next_track': { label: 'Next track' },
 		'track_name': {
@@ -177,7 +177,7 @@ instance.prototype.action = function(action) {
 			self.sendNoArg(cmd);
 			break;
 		
-		case 'play_section':
+		case 'play_to_end':
 			cmd = '/d3/showcontrol/playsection';
 			self.sendNoArg(cmd);
 			break;
@@ -202,7 +202,7 @@ instance.prototype.action = function(action) {
 			self.sendNoArg(cmd);
 			break;
 			
-		case 'return_start':
+		case 'return_to_start':
 			cmd = '/d3/showcontrol/returntostart';
 			self.sendNoArg(cmd);
 			break;
