@@ -83,7 +83,7 @@ instance.prototype.config_fields = function() {
 instance.prototype.actions = function(system) {
 	var self = this;
 
-	self.system.emit('instance_actions', self.id, {
+	self.setActions({
 		'play': { label: 'Play' },
 		'play_to_end': { label: 'Play to end of section' },
 		'loop_section': { label: 'Loop section' },
@@ -152,14 +152,14 @@ instance.prototype.actions = function(system) {
 instance.prototype.sendNoArg = function(str,) {
 	var self = this;
 
-	self.system.emit('osc_send', self.config.host, self.config.port, str, []);
+	self.oscSend(self.config.host, self.config.port, str, []);
 	debug('Command =',str)
 }
 
 instance.prototype.sendArg = function(str,str2) {
 	var self = this;
 
-	self.system.emit('osc_send', self.config.host, self.config.port, str, [str2]);
+	self.oscSend(self.config.host, self.config.port, str, [str2]);
 	debug('Command =',str,str2)
 }
 
