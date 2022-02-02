@@ -8,12 +8,19 @@
 	"manufacturer": "Disguise",
 	"product": "Disguise - OSC",
 	"shortname": "d3osc",
-	"homepage": "https://www.disguise.one/en/",
+	"homepage": "https://github.com/bitfocus/companion-module-disguise#readme",
 	"description": "Disguise OSC Control",
 	"main": "disguise.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "William Viker <william@bitfocus.io>",
-	"license": "MIT"
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-disguise/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-disguise.git"
+	}
 }
