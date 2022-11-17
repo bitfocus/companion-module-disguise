@@ -420,7 +420,7 @@ instance.prototype.init_presets = function() {
 			bgcolor: self.rgb(255,255,255)
 		},
 		actions: [{
-			action: 'play_section'
+			action: 'play_to_end'
 		}]
 	});
 	
